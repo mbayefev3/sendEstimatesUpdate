@@ -15,6 +15,7 @@ function App() {
   const [currency, setCurrency] = React.useState('')
   const [realCurrency, setRealCurrency] = React.useState('')
   const [error, setError] = React.useState('')
+  const [displayCurreny, setDisplayCurrency] = React.useState('')
   const handleCredentials = (e) => {
 
     if (e.length === 1) {
@@ -74,9 +75,15 @@ function App() {
   }
 
   const handleLogout = (e) => {
+    console.log('signin', signin)
 
-    setUser('')
-    setUntrack(false)
+    if (signin === false) {
+      setSignin(true)
+      setUser('')
+      setUntrack(true)
+    }
+
+
 
 
   }
